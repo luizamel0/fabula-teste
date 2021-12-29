@@ -1,6 +1,103 @@
 <fable>
-	<page>
+  
+  <page background="intro.jpg">
+    <agent text="Bem-vindo!" font-size="30" x="40" y="400"/>
+    <agent text="Há uma família precisando da sua ajuda com um bebê travesso. Sua missão é cuidar dele enquanto sua família viaja. Um dia de babá. Vamos lá?" font-size="20" x="40" y="300"  />
+    <agent img="next.png" x="400" y="50" width="80" height="50" on-touch="_GOTO_PAGE:2"/>
+      
+      
+      
+  </page>
+  
+  <page background="casa1.jpg" soundtrack="music.wav">
+    <agent text="Essa é a casa da família Melo, toque na porta para entrar" font-size="20" x="10" y="370" width="140"/>
+    
+    <agent img="porta.png" x="220" y="20" width="60" height="200" on-touch="_GOTO_PAGE:3">
+    
+    </agent>
+      
+       
+  </page>
+  
+	<page background="sala.jpg" soundtrack="music.wav" >
+    <agent
+      text="O bebê se colocou em grande perigo. Ele está prestes a cair, ajude-o!" font-size="20" color="black" x="40" y="420" on-trigger="caiu">
+    <caiu text="Ufa! Você conseguiu, que susto." />
+    </agent>
+      <agent
+      text="Ponha a almofada para amortecer a queda e clique no neném" font-size="15" color="black" x="40" y="380" on-trigger="caiu">
+    <caiu y="-200"/>
+
+    </agent>
+    
+    <agent img="pillow.png" x="370" y="180" width="50" height="60" draggable="true" ></agent>
+    
+    <agent img="happybaby.png" x="130" y="245" width="50" height="50" on-touch="caiu">
+      <caiu img="babysafe.png" x="130" y="150" width="55" height="55" />
+  
+    </agent>
+    <agent img="next.png" x="400" y="20" width="70" height="70" on-touch="_GOTO_PAGE:4">
+    
+    </agent>
+    
+  </page>
+  
+  <page background="kitchen.png" soundtrack="petslife.wav">
+    <agent text="O bebê está chorando! descubra como fazê-lo parar." font-size="20" x="20" y="420" color="white" width="300" on-trigger="parou">
+    <parou text="Bom trabalho!"/>
+
+    </agent>
+     
+    <agent img="ant-chorando.png" x="215" y="205" width="110" height="130" drop-zone="some">
+    <some img="happybaby.png" x="235" y="240" width="80" height="80" />
+    </agent>
+    
+    <agent img="babybottle.png" x="40" y="230" width="60" height="60" draggable="true" on-drop="some" on-zone="parou" on-trigger="parou">
+    <parou y="-200" />
+      
+      </agent>
+    
+    <agent img="next.png" x="400" y="50" width="80" height="80" on-touch="_GOTO_PAGE:5"></agent>
+   
+    
+  
+  
+  
+  </page>
+  
+  <page background="quintal2.jpg" soundtrack="petslife.wav">
+    <agent text="Essa não! Você perdeu o bebê. Ache-o antes que sua família chegue e o ponha no carrinho." font-size="20" x="30" y="430" on-trigger="achou" >
+      <achou text="Nossa, mas é cada sufoco! Você foi muito bem." />
+      
+    </agent>
+    <agent img="jogodemesa.png" x="130" y="80" width="220" height="220" draggable="true" ></agent>  
+    
+    <agent img="carrinho.png" x="20" y="230" width="220" height="220" drop-zone="Some">
+    <Some x="20" />
+    
+    </agent>
+    
+    
+    <agent img="babysafe.png" x="410" y="260" width="50" height="50" draggable="true" on-drop="Some" on-zone="Sometb" on-trigger="Sometb">
+    <Sometb y="-200"/>
+      
+    </agent>
+      
+    
+    <agent img="fonte.png" x="380" y="250" width="100" height="140" draggable="true"></agent>
+      
+    <agent img="next.png" x="7" y="20" width="60" height="60" on-touch="_GOTO_PAGE:6">
+    </agent>
+      
+  </page>
+  
+  <page background="ofim.jpg" soundtrack="babyhero.wav">
+    <agent text="Os pais do nosso bebê chegaram e assim chegamos ao fim! Obrigada por ajudar a nossa família." font-size="20" x="190" y="370" width="290" >
+    </agent>
+    <agent img="familia.png" x="350" y="10" width="150" height="150"></agent>
+  
   
     
   </page>
+  
 </fable>
